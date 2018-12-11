@@ -1,0 +1,18 @@
+$TTL 3H
+@	IN SOA	rpi.internal. root.rpi.internal. (
+					20181207 ; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+
+    IN  NS  rpi.internal.
+
+rpi IN  A   10.0.0.184
+rpi IN  AAAA    <mask>
+workstation IN  A   10.0.0.48
+workstation IN  AAAA    <mask>
+gateway IN  A   10.0.0.1
+gateway IN  AAAA    <mask>
+
+service IN  CNAME   rpi

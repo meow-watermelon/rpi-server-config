@@ -1,0 +1,32 @@
+[all]
+boot_delay=1
+kernel=rpi3-u-boot.bin
+
+# Put the RPi3 into 64 bit mode
+arm_control=0x200
+
+# New option to allow the firmware to load upstream dtb
+# Will allow things like camera, touchscreen etc to work OOTB
+upstream_kernel=1
+
+# Without this sdram runs at 400mhz, instead of 450
+# https://github.com/Hexxeh/rpi-firmware/issues/172
+audio_pwm_mode=0
+
+# Enable UART
+# Only enable UART if you're going to use it as it has speed implications
+# Serial console is ttyS0 on RPi3 and ttyAMA0 on all other variants
+# u-boot will auto detect serial and pass corrent options to kernel if enabled
+# Details here on speed https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=141195
+enable_uart=1
+
+# This isn't used by mainline VC4 driver so reduce to lowest supported value
+gpu_mem=16
+
+# Allow OS rather than firmware control CEC
+mask_gpu_interrupt1=0x100
+
+# Other options you can adjust for all Raspberry Pi Revisions
+# https://www.raspberrypi.org/documentation/configuration/config-txt/README.md
+# All options documented at http://elinux.org/RPiconfig
+# for more options see http://elinux.org/RPi_config.txt

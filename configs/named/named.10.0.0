@@ -1,0 +1,13 @@
+$TTL 3H
+@	IN SOA	rpi.internal. root.rpi.internal. (
+					20181206 ; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+
+    IN  NS  rpi.internal.
+
+184 IN  PTR rpi.internal.
+48  IN  PTR workstation.internal.
+1   IN  PTR gateway.internal.
